@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="todo-panel" aria-labelledby="app-title">
+      <header class="header">
+        <div>
+          <p class="eyebrow">Daily Tasks</p>
+          <h1 id="app-title">Todo List</h1>
+        </div>
+        <span class="task-count" id="task-count">0 left</span>
+      </header>
+
+      <form class="todo-form" id="todo-form">
+        <label class="sr-only" for="todo-input">New task</label>
+        <input id="todo-input" type="text" placeholder="Add a new task..." autocomplete="off" maxlength="80">
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="filters" role="group" aria-label="Task filters">
+        <button class="filter active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="active">Active</button>
+        <button class="filter" type="button" data-filter="completed">Completed</button>
+      </div>
+
+      <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+
+      <footer class="footer">
+        <button class="clear-button" id="clear-completed" type="button">Clear completed</button>
+      </footer>
+    </section>
+  </main>
+
+  <template id="todo-template">
+    <li class="todo-item">
+      <label class="checkbox-wrap">
+        <input class="toggle" type="checkbox">
+        <span class="custom-checkbox"></span>
+        <span class="todo-text"></span>
+      </label>
+      <button class="delete-button" type="button" aria-label="Delete task">x</button>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
